@@ -3,10 +3,10 @@ Redis Analyzer is a simple tool to group keys by prefixes and sum their size in 
 
 ### Usage
 ```shell script
-Usage of ./redis-analyzer:
+Usage of ./bin/redis-analyzer:
   -addr string
         redis host:port (default "127.0.0.1:6379")
-  -breakdown float
+  -breakdown int
         breakdown count (default 2)
   -chunk int
         chunk size of key to analyse at once (default 10000)
@@ -27,6 +27,7 @@ db 3 is empty
 db 4 is empty
 [db 1]     224/224         --- [====================================================================] 100%
 [db 2]   19833/19833       --- [====================================================================] 100%
+
 +----+-----------------------+-------+-----------+
 | DB |        Prefix         | Count |   Size    |
 +----+-----------------------+-------+-----------+
