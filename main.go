@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+var Build = "master"
+var Version = "dev"
+
 type stat struct {
 	ByteCount int64
 	KeyCount  int64
@@ -32,6 +35,10 @@ func main() {
 		match        = flag.String("match", "*", "key name filter on scan")
 	)
 
+	flag.Usage = func() {
+		fmt.Printf("Usage of %s (v%s - %s):\n", "redis-analyzer", Version, Build)
+		flag.PrintDefaults()
+	}
 	flag.Parse()
 	uiprogress.Start()
 
